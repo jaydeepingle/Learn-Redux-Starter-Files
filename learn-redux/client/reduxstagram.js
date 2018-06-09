@@ -13,15 +13,18 @@ import PhotoGrid from './components/PhotoGrid';
 
 // Import React-Router deps
 import { Router, Route, IndexRoute, hashHistory } from 'react-router'; // browserHistory will get replaced by Redux
-
+import { Provider } from 'react-redux';
+import store, { history } from './store'     // for default export no need of curly braces
 
 const router = (
-    <Router history={hashHistory}>
-        <Route path="/" component={Main}>
-            <IndexRoute component={PhotoGrid}></IndexRoute>
-            <Route path="/view/:postId" component={Single}></Route>
-        </Route>
-    </Router>
+    <Provider store={store}> 
+        <Router history={history}>
+            <Route path="/" component={Main}>
+                <IndexRoute component={PhotoGrid}></IndexRoute>
+                <Route path="/view/:postId" component={Single}></Route>
+            </Route>
+        </Router>
+    </Provider>
 )
 
 

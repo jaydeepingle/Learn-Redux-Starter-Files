@@ -1,5 +1,5 @@
 import { createStore, compose } from 'redux';
-import { syncHistoryWithStore } from 'react-rotuer-redux';
+import { syncHistoryWithStore } from 'react-router-redux';
 import { hashHistory } from 'react-router';
 
 // import the root reducer
