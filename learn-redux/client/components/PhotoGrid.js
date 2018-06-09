@@ -1,14 +1,14 @@
 import React from 'react';
-import { Link } from 'react-router';
+import Photo from './Photo';
 
-const Main = React.createClass({
-    render() {
-        return (
-            <div className="photo-grid">
-                I am the PhotoGrid
-            </div>
-        )
-    }
+const PhotoGrid = React.createClass({
+  render() {
+    return (
+      <div className="photo-grid">
+        {this.props.posts.map((post, i) => <Photo {...this.props} key={i} i={i} post={post} />)}
+      </div>
+    )
+  }
 });
 
-export default Main;
+export default PhotoGrid;
